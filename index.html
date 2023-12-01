@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<html>
+
+<style type="text/css">
+body {
+	font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 1000;
+	font-size: 17px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 980px;
+}
+h1 {
+	font-weight:1000;
+	line-height: 1.15em;
+}
+
+h2 {
+	font-size: 1.75em;
+}
+a:link,a:visited {
+	color: #1367a7;
+	text-decoration: none;
+}
+a:hover {
+	color: #208799;
+}
+h1, h2, h3 {
+	text-align: center;
+}
+h1 {
+	font-size: 40px;
+	font-weight: 500;
+}
+h2, h3 {
+	font-weight: 400;
+	margin: 16px 0px 4px 0px;
+}
+.paper-title {
+	padding: 16px 0px 16px 0px;
+}
+section {
+	margin: 32px 0px 32px 0px;
+	text-align: justify;
+	clear: both;
+}
+.col-5 {
+	 width: 20%;
+	 float: left;
+}
+.col-4 {
+	 width: 25%;
+	 float: left;
+}
+.col-3 {
+	 width: 33%;
+	 float: left;
+}
+.col-2 {
+	 width: 50%;
+	 float: left;
+}
+.row, .author-row, .affil-row {
+	 overflow: auto;
+}
+.author-row, .affil-row {
+	font-size: 20px;
+}
+.large-font {
+	font-size: 20px;
+}
+.row {
+	margin: 16px 0px 16px 0px;
+}
+.authors {
+	font-size: 18px;
+}
+.affil-row {
+	margin-top: 16px;
+}
+.teaser {
+	max-width: 100%;
+}
+.text-center {
+	text-align: center;
+}
+.screenshot {
+	width: 256px;
+	border: 1px solid #ddd;
+}
+.screenshot-el {
+	margin-bottom: 16px;
+}
+hr {
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ddd;
+	margin: 0;
+}
+.material-icons {
+	vertical-align: -6px;
+}
+p {
+	line-height: 1.25em;
+}
+.caption_justify {
+	font-size: 16px;
+	/*font-style: italic;*/
+	color: #666;
+	text-align: justify;
+	margin-top: 0px;
+	margin-bottom: 64px;
+}
+.caption {
+	font-size: 16px;
+	/*font-style: italic;*/
+	color: #666;
+	text-align: center;
+	margin-top: 8px;
+	margin-bottom: 64px;
+}
+.caption_inline {
+	font-size: 16px;
+	/*font-style: italic;*/
+	color: #666;
+	text-align: center;
+	margin-top: 8px;
+	margin-bottom: 0px;
+}
+.caption_bold {
+	font-size: 16px;
+	/*font-style: italic;*/
+	color: #666;
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-weight: bold;
+}
+video {
+	display: block;
+	margin: auto;
+}
+figure {
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+figure {
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#bibtex pre {
+	font-size: 14px;
+	background-color: #eee;
+	padding: 16px;
+}
+.blue {
+	color: #2c82c9;
+	font-weight: bold;
+}
+.orange {
+	color: #d35400;
+	font-weight: bold;
+}
+.flex-row {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.paper-btn {
+  position: relative;
+  text-align: center;
+
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 18px;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+
+  background-color: #1367a7;
+  color: #ecf0f1 !important;
+  font-size: 20px;
+  width: auto;
+  height: auto;
+  font-weight: 600;
+}
+.paper-btn-parent {
+	display: flex;
+	justify-content: center;
+	margin: 16px 0px;
+}
+.paper-btn:hover {
+	opacity: 0.85;
+}
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+.venue {
+	color: #1367a7;
+}
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create four equal columns that floats next to each other */
+.column2 {
+  float: left;
+  width: 48%;
+  padding: 1px;
+  text-align: center;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 24%;
+  padding: 1px;
+  text-align: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#wrapper { 
+    width: 920px; 
+    height: auto; 
+    margin: 0 auto;
+} 
+#home1 { 
+    width: 24%; 
+    height: 250px; 
+    float: left; 
+    margin-right: 1%;
+    justify-content: space-around;
+} 
+
+#home2 { 
+    width: 24%; 
+    height: 250px; 
+    float: left; 
+    margin-right: 1%;
+}
+#home3 { 
+    width: 24%; 
+    height: 250px; 
+    float: left; 
+    margin-right: 1%; 
+}
+#home4 { 
+    width: 24%; 
+    height: 250px; 
+    float: left; 
+}
+
+@media (max-width:767px) {
+    #wrapper{
+        width: 100%;
+        height: auto;
+    }
+    #home1 {
+        width: 100%;
+        height: auto;
+        float: none;
+    }
+    #home2 {
+        width: 100%;
+        height: auto;
+        float: none;
+    }
+    #home3 {
+        width: 100%;
+        height: auto;
+        float: none;
+    }
+    #home4 {
+        width: 100%;
+        height: auto;
+        float: none;
+   }
+}
+.overlayText {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  z-index: 1;
+}
+
+#topText {
+  color: white;
+  font-size: 20px;
+  align-self: center;
+}
+</style>
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,1000,1000italic' rel='stylesheet' type='text/css'>
+<head>
+	<title>PlatoNeRF: 3D Reconstruction in Plato's Cave via Single-View Two-Bounce Lidar</title>
+	<meta property="og:description" content="PlatoNeRF: 3D Reconstruction in Plato's Cave via Single-View Two-Bounce Lidar"/>
+	<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:creator" content="@mmalex">
+	<meta name="twitter:title" content="PlatoNeRF: 3D Reconstruction in Plato's Cave via Single-View Two-Bounce Lidar">
+	<meta name="twitter:description" content="A paper from Meta and MIT that uses lidar data to train NeRF for 3D reconstruction from a single view.">
+	<meta name="twitter:image" content="https://platonerf.github.io/assets/teaser.jpg">
+</head>
+
+<body>
+<div class="container">
+	<div class="paper-title">
+		<h1>PlatoNeRF: 3D Reconstruction in Plato's Cave via Single-View Two-Bounce Lidar</h1>
+	</div>
+
+	<div class="text-center large-font"><a href="https://tzofi.github.io/">Tzofi Klinghoffer</a><sup>1</sup>, <a href="https://engineering.purdue.edu/people/xiaoyu.xiang.1">Xiaoyu Xiang</a><sup>* 2</sup>, <a href="https://sidsoma.github.io/">Siddharth Somasundaram</a><sup>* 1</sup>, <a href="https://ychfan.github.io/">Yuchen Fan</a><sup>2</sup></div>
+	<div class="text-center large-font"><a href="https://richardt.name/">Christian Richardt</a><sup>2</sup>, <a href="https://www.media.mit.edu/people/raskar/overview/">Ramesh Raskar</a><sup>1</sup>, <a href="">Rakesh Ranjan</a><sup>3</sup></div>
+	<div class="text-center large-font"><sup>1</sup>Massachusetts Institute of Technology, <sup>2</sup>Meta</a></div>
+            
+		<div style="clear: both">
+			<div class="paper-btn-parent">
+				<a class="paper-btn" href="assets/tzofi2023plato.pdf">
+					<span class="material-icons"> description </span>
+					Paper
+				</a>
+				<a class="paper-btn" href="">
+					<span class="material-icons"> description </span>
+					Dataset (coming soon!)
+				</a>
+				<a class="paper-btn" href="">
+					<span class="material-icons"> description </span>
+					Code (coming soon!)
+				</a>
+				<a class="paper-btn" href="https://youtu.be/tNdPlGUsCPw?si=gfEWcazENyMgvbyb">
+					<span class="material-icons"> description </span>
+					Video
+				</a>
+			</div>
+		</div>
+	</div>
+
+    <section id="teaser">
+            <figure style="width: 100%;">
+                <a href="assets/teaser.png">
+                    <img width="100%" src="assets/teaser.png">
+                </a>
+                <p class="caption" style="margin-bottom: 1px;  text-align: justify">
+			We propose PlatoNeRF: a method to recover scene geometry from a single view using two-bounce signals captured by a single-photon lidar. (a) A laser illuminates a scene point, which diffusely reflects light in all directions. The reflected light illuminates the rest of the scene and casts shadows. Light that returns to the lidar sensor provides information about the visible scene, and cast shadows provide information about occluded portions of the scene. (b) The lidar sensor captures 3D time-of-flight images. (c) By aggregating several such images (by scanning the position of the laser), we are able to reconstruct the entire 3D scene geometry with volumetric rendering.
+                </p>
+            </figure>
+    </section>
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h2>
+                Technical Video
+            </h2>
+            <div class="text-center">
+                <div style="position:relative;padding-top:56.25%;">
+                    <iframe src="https://www.youtube.com/embed/tNdPlGUsCPw?si=gfEWcazENyMgvbyb" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<section id="abstract"/>
+		<h2>Abstract</h2>
+		<hr>
+		<p>
+	    3D reconstruction from a single-view is challenging because of the ambiguity from monocular cues and lack of information about occluded regions. Neural radiance fields (NeRF), while popular for view synthesis and 3D reconstruction, are typically reliant on multi-view images. Existing methods for single-view 3D reconstruction with NeRF rely on either data priors to hallucinate views of occluded regions, which may not be physically accurate, or shadows observed by RGB cameras, which are difficult to detect in ambient light and low albedo backgrounds. We propose using time-of-flight data captured by a single-photon avalanche diode to overcome these limitations. Our method models two-bounce optical paths with NeRF, using lidar transient data for supervision.  By leveraging the advantages of both NeRF and two-bounce light measured by lidar, we demonstrate that we can reconstruct visible and occluded geometry without data priors or reliance on controlled ambient lighting or scene albedo. In addition, we demonstrate improved generalization under practical constraints on sensor spatial- and temporal-resolution. We believe our method is a promising direction as single-photon lidars become ubiquitous on consumer devices, such as phones, tablets, and headsets. 
+		</p>
+	</section>
+
+	<section id="dataset"/>
+		<h2>Dataset</h2>
+		<hr>
+            <figure style="width: 100%;">
+                <a href="assets/dataset.png">
+                    <img width="100%" src="assets/dataset.png">
+                </a>
+                <p class="caption" style="margin-bottom: 1px;  text-align: justify">
+			We create a dataset of scenes shown above. We train our model and our comparison methods on a single view. Objects are either partially self-occluded or fully occluded from the single training view. Our method and Bounce Flash Lidar are trained on single-view lidar data and S<sup>3</sup>-NeRF is trained on single-view RGB data.
+                </p>
+            </figure>
+        </section>
+
+	<section id="results"/>
+		<h2>Results</h2>
+		<hr>
+			<div class="row">
+			  <div class="column">
+			    <p>Ground Truth</p>
+			  </div>
+			  <div class="column">
+			    <p>PlatoNeRF</p>
+			  </div>
+			  <div class="column">
+			    <p>BF Lidar</p>
+			  </div>
+			  <div class="column">
+			    <p>S<sup>3</sup>-NeRF</p>
+			  </div>
+			</div>
+			<div id="wrapper">
+			    <video id="home1" width="250" height="250" controls="controls" controls muted loop autoplay>
+				<source type="video/mp4" src="results/gt/chair.mp4" />
+			    </video>
+			    <video id="home2" width="250" height="250" controls="controls" controls muted loop autoplay>
+				<source type="video/mp4" src="results/plato/chair.mp4" />
+			    </video>
+			    <video id="home3" width="250" height="250" controls="controls" controls muted loop autoplay>
+				<source type="video/mp4" src="results/bf/chair.mp4" />
+			    </video>
+			    <video id="home4" width="250" height="250" controls="controls" controls muted loop autoplay>
+				<source type="video/mp4" src="results/s3/chair.mp4" />
+			    </video>
+
+			    <video id="home1" width="250" height="250" controls="controls" controls muted loop autoplay>
+				<source type="video/mp4" src="results/gt/dragon.mp4" />
+			    </video>
+			    <video id="home2" width="250" height="250" controls="controls" controls muted loop autoplay>
+				<source type="video/mp4" src="results/plato/dragon.mp4" />
+			    </video>
+			    <video id="home3" width="250" height="250" controls="controls" controls muted loop autoplay>
+				<source type="video/mp4" src="results/bf/dragon.mp4" />
+			    </video>
+			    <video id="home4" width="250" height="250" controls="controls" controls muted loop autoplay>
+				<source type="video/mp4" src="results/s3/dragon.mp4" />
+			    </video>
+
+			    <video id="home1" width="250" height="250" controls="controls" controls muted loop autoplay>
+				<source type="video/mp4" src="results/gt/bunny.mp4" />
+			    </video>
+			    <video id="home2" width="250" height="250" controls="controls" controls muted loop autoplay>
+				<source type="video/mp4" src="results/plato/bunny.mp4" />
+			    </video>
+			    <video id="home3" width="250" height="250" controls="controls" controls muted loop autoplay>
+				<source type="video/mp4" src="results/bf/bunny.mp4" />
+			    </video>
+			    <video id="home4" width="250" height="250" controls="controls" controls muted loop autoplay>
+				<source type="video/mp4" src="results/s3/bunny.mp4" />
+			    </video>
+
+			    <video id="home1" width="250" height="250" controls="controls" controls muted loop autoplay>
+				<source type="video/mp4" src="results/gt/occlusion.mp4" />
+			    </video>
+			    <video id="home2" width="250" height="250" controls="controls" controls muted loop autoplay>
+				<source type="video/mp4" src="results/plato/occlusion.mp4" />
+			    </video>
+			    <video id="home3" width="250" height="250" controls="controls" controls muted loop autoplay>
+				<source type="video/mp4" src="results/bf/occlusion.mp4" />
+			    </video>
+			    <video id="home4" width="250" height="250" controls="controls" controls muted loop autoplay>
+				<source type="video/mp4" src="results/s3/occlusion.mp4" />
+			    </video>
+			    <p class="caption" style="margin-bottom: 1px;  text-align: center">
+				Results across four scenes: chair, dragon, bunny, bunny in chair (from top to bottom).
+			    </p>
+			</div>
+	</section>
+	<section id="Ablations"/>
+		<h2>Ablations</h2>
+		<h3>Spatial Resolution (PlatoNeRF top; BF Lidar bottom)</h3>
+		<hr>
+		<div class="row">
+		  <div class="column">
+		    <p>512 x 512</p>
+		  </div>
+		  <div class="column">
+		    <p>128 x 128</p>
+		  </div>
+		  <div class="column">
+		    <p>64 x 64</p>
+		  </div>
+		  <div class="column">
+		    <p>32 x 32</p>
+		  </div>
+		</div>
+		<div style="padding-bottom: 50px;" id="wrapper">
+		    <video id="home1" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/plato/chair.mp4" />
+		    </video>
+		    <video id="home2" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/spatial/plato/4x.mp4" />
+		    </video>
+		    <video id="home3" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/spatial/plato/8x.mp4" />
+		    </video>
+		    <video id="home4" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/spatial/plato/16x.mp4" />
+		    </video>
+
+		    <video id="home1" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/bf/chair.mp4" />
+		    </video>
+		    <video id="home2" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/spatial/bf/4x.mp4" />
+		    </video>
+		    <video id="home3" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/spatial/bf/8x.mp4" />
+		    </video>
+		    <video id="home4" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/spatial/bf/16x.mp4" />
+		    </video>
+		    <p class="caption" style="margin-bottom: 1px;  text-align: center">
+			While PlatoNeRF (top) is able to interpolate across missing pixels due to the use of an implicit representation, Bounce Flash Lidar (bottom) performance significantly degrades as spatial resolution is reduced.
+		    </p>
+		</div>
+		<h3 style="padding-top: 10px;">Temporal Resolution (PlatoNeRF top; BF Lidar bottom)</h3>
+		<hr>
+		<div class="row">
+		  <div class="column">
+		    <p>128 ps</p>
+		  </div>
+		  <div class="column">
+		    <p>256 ps</p>
+		  </div>
+		  <div class="column">
+		    <p>512 ps</p>
+		  </div>
+		  <div class="column">
+		    <p>1024 ps</p>
+		  </div>
+		</div>
+		<div style="padding-bottom: 50px;" id="wrapper">
+		    <video id="home1" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/plato/chair.mp4" />
+		    </video>
+		    <video id="home2" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/temporal/plato/2x.mp4" />
+		    </video>
+		    <video id="home3" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/temporal/plato/4x.mp4" />
+		    </video>
+		    <video id="home4" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/temporal/plato/8x.mp4" />
+		    </video>
+
+		    <video id="home1" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/bf/chair.mp4" />
+		    </video>
+		    <video id="home2" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/temporal/bf/2x.mp4" />
+		    </video>
+		    <video id="home3" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/temporal/bf/4x.mp4" />
+		    </video>
+		    <video id="home4" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/temporal/bf/8x.mp4" />
+		    </video>
+		    <p class="caption" style="margin-bottom: 1px;  text-align: center">
+			As temporal resolution is reduced (i.e. bin size increased beyond 128 ps), PlatoNeRF (top) maintains smooth reconstructions, while geometry reconstructed by Bounce Flash Lidar (bottom) becomes bumpy (especially noticable on the the floor and walls). Note that the temporal resolution is indicated by the bin size (in picoseconds), with larger bin sizes indicating worse temporal resolution.
+		    </p>
+		</div>
+		<h3 style="padding-top: 10px;">Ambient Light and Low Albedo Backgrounds</h3>
+		<hr>
+		<div class="row">
+		  <div class="column2">
+		    <p>Ambient Light</p>
+		  </div>
+		  <div class="column2">
+		    <p>Low Albedo Background</p>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="column">
+		    <p>PlatoNeRF</p>
+		  </div>
+		  <div class="column">
+		    <p>S<sup>3</sup>-NeRF</p>
+		  </div>
+		  <div class="column">
+		    <p>PlatoNeRF</p>
+		  </div>
+		  <div class="column">
+		    <p>S<sup>3</sup>-NeRF</p>
+		  </div>
+		</div>
+		<div style="padding-bottom: 50px;" id="wrapper">
+		    <video id="home1" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/ambient/plato.mp4" />
+		    </video>
+		    <video id="home2" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/ambient/s3.mp4" />
+		    </video>
+		    <video id="home3" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/albedo/plato.mp4" />
+		    </video>
+		    <video id="home4" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/albedo/s3.mp4" />
+		    </video>
+		    <p class="caption" style="margin-bottom: 1px;  text-align: center">
+			PlatoNeRF is robust both to ambient light (left) and low albedo backgrounds (right), whereas RGB methods often fail, such as shown by S<sup>3</sup>-NeRF. S<sup>3</sup>-NeRF is unable to recover geometry with an area light added to the scene (left) and only recovers visible geometry when shadows become hard to detect due to low albedo background (right).
+		    </p>
+		</div>
+		<h3 style="padding-top: 10px;">Number of Illumination Points (PlatoNeRF)</h3>
+		<hr>
+		<div class="row">
+		  <div class="column">
+		    <p>16</p>
+		  </div>
+		  <div class="column">
+		    <p>8</p>
+		  </div>
+		  <div class="column">
+		    <p>4</p>
+		  </div>
+		  <div class="column">
+		    <p>2</p>
+		  </div>
+		</div>
+		<div style="padding-bottom: 50px;" id="wrapper">
+		    <video id="home1" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/plato/chair.mp4" />
+		    </video>
+		    <video id="home2" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/illumination/plato8.mp4" />
+		    </video>
+		    <video id="home3" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/illumination/plato4.mp4" />
+		    </video>
+		    <video id="home4" width="250" height="250" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/illumination/plato2.mp4" />
+		    </video>
+		    <p class="caption" style="margin-bottom: 1px;  text-align: center">
+			Results as the number of illumination points used to train PlatoNeRF is reduced from sixteen illumination points (left) to two illumination points (right).
+		    </p>
+		</div>
+	</section>
+
+	<section id="bibtex">
+		<h2>Citation</h2>
+		<hr>
+		<pre><code>@article{PlatoNeRF,
+	author    = {Klinghoffer, Tzofi and
+		     Xiang, Xiaoyu and
+		     Somasundaram, Siddharth and
+		     Fan, Yuchen and 
+		     Richardt, Christian and
+		     Raskar, Ramesh and
+		     Ranjan, Rakesh},
+	title     = {{PlatoNeRF}: 3D Reconstruction in Plato's Cave via Single-View Two-Bounce Lidar},
+	booktitle = {arXiv preprint},
+	year      = {2023},
+	url       = {https://platonerf.github.io},
+}
+	</section>
+</body>
+</html>
