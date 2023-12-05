@@ -333,8 +333,8 @@ figure {
 	</div>
 
 	<div class="text-center large-font"><a href="https://tzofi.github.io/">Tzofi Klinghoffer</a><sup>1</sup>, <a href="https://engineering.purdue.edu/people/xiaoyu.xiang.1">Xiaoyu Xiang</a><sup>* 2</sup>, <a href="https://sidsoma.github.io/">Siddharth Somasundaram</a><sup>* 1</sup>, <a href="https://ychfan.github.io/">Yuchen Fan</a><sup>2</sup></div>
-	<div class="text-center large-font"><a href="https://richardt.name/">Christian Richardt</a><sup>2</sup>, <a href="https://www.media.mit.edu/people/raskar/overview/">Ramesh Raskar</a><sup>1</sup>, <a href="">Rakesh Ranjan</a><sup>2</sup></div>
-	<div class="text-center large-font"><sup>1</sup>Massachusetts Institute of Technology, <sup>2</sup>Meta</a></div>
+	<div class="text-center large-font"><a href="https://richardt.name/">Christian Richardt</a><sup>3</sup>, <a href="https://www.media.mit.edu/people/raskar/overview/">Ramesh Raskar</a><sup>1</sup>, <a href="">Rakesh Ranjan</a><sup>2</sup></div>
+	<div class="text-center large-font"><sup>1</sup>Massachusetts Institute of Technology, <sup>2</sup>Meta</a>, <sup>3</sup>Codec Avatars Lab, Meta</a></div>
             
 		<div style="clear: both">
 			<div class="paper-btn-parent">
@@ -412,76 +412,28 @@ figure {
 	<section id="results"/>
 		<h2>Results</h2>
 		<hr>
-			<div class="row">
-			  <div class="column">
-			    <p>Ground Truth</p>
-			  </div>
-			  <div class="column">
-			    <p>PlatoNeRF</p>
-			  </div>
-			  <div class="column">
-			    <p>BF Lidar</p>
-			  </div>
-			  <div class="column">
-			    <p>S<sup>3</sup>-NeRF</p>
-			  </div>
-			</div>
-			<div id="wrapper">
-			    <video id="home1" width="250" height="250" controls="controls" controls muted loop autoplay>
-				<source type="video/mp4" src="results/gt/chair.mp4" />
-			    </video>
-			    <video id="home2" width="250" height="250" controls="controls" controls muted loop autoplay>
-				<source type="video/mp4" src="results/plato/chair.mp4" />
-			    </video>
-			    <video id="home3" width="250" height="250" controls="controls" controls muted loop autoplay>
-				<source type="video/mp4" src="results/bf/chair.mp4" />
-			    </video>
-			    <video id="home4" width="250" height="250" controls="controls" controls muted loop autoplay>
-				<source type="video/mp4" src="results/s3/chair.mp4" />
-			    </video>
-
-			    <video id="home1" width="250" height="250" controls="controls" controls muted loop autoplay>
-				<source type="video/mp4" src="results/gt/dragon.mp4" />
-			    </video>
-			    <video id="home2" width="250" height="250" controls="controls" controls muted loop autoplay>
-				<source type="video/mp4" src="results/plato/dragon.mp4" />
-			    </video>
-			    <video id="home3" width="250" height="250" controls="controls" controls muted loop autoplay>
-				<source type="video/mp4" src="results/bf/dragon.mp4" />
-			    </video>
-			    <video id="home4" width="250" height="250" controls="controls" controls muted loop autoplay>
-				<source type="video/mp4" src="results/s3/dragon.mp4" />
-			    </video>
-
-			    <video id="home1" width="250" height="250" controls="controls" controls muted loop autoplay>
-				<source type="video/mp4" src="results/gt/bunny.mp4" />
-			    </video>
-			    <video id="home2" width="250" height="250" controls="controls" controls muted loop autoplay>
-				<source type="video/mp4" src="results/plato/bunny.mp4" />
-			    </video>
-			    <video id="home3" width="250" height="250" controls="controls" controls muted loop autoplay>
-				<source type="video/mp4" src="results/bf/bunny.mp4" />
-			    </video>
-			    <video id="home4" width="250" height="250" controls="controls" controls muted loop autoplay>
-				<source type="video/mp4" src="results/s3/bunny.mp4" />
-			    </video>
-
-			    <video id="home1" width="250" height="250" controls="controls" controls muted loop autoplay>
-				<source type="video/mp4" src="results/gt/occlusion.mp4" />
-			    </video>
-			    <video id="home2" width="250" height="250" controls="controls" controls muted loop autoplay>
-				<source type="video/mp4" src="results/plato/occlusion.mp4" />
-			    </video>
-			    <video id="home3" width="250" height="250" controls="controls" controls muted loop autoplay>
-				<source type="video/mp4" src="results/bf/occlusion.mp4" />
-			    </video>
-			    <video id="home4" width="250" height="250" controls="controls" controls muted loop autoplay>
-				<source type="video/mp4" src="results/s3/occlusion.mp4" />
-			    </video>
-			    <p class="caption" style="margin-bottom: 1px;  text-align: center">
-				Results across four scenes: chair, dragon, bunny, bunny in chair (from top to bottom).
-			    </p>
-			</div>
+		<div class="row">
+		  <div class="column">
+		    <p>Ground Truth</p>
+		  </div>
+		  <div class="column">
+		    <p>PlatoNeRF</p>
+		  </div>
+		  <div class="column">
+		    <p>BF Lidar</p>
+		  </div>
+		  <div class="column">
+		    <p>S<sup>3</sup>-NeRF</p>
+		  </div>
+		</div>
+		<div id="wrapper">
+		    <video id="video" width="900" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/results.mp4" />
+		    </video>
+		    <p class="caption" style="margin-bottom: 1px;  text-align: center">
+			Results across four scenes: chair, dragon, bunny, bunny in chair (from top to bottom).
+		    </p>
+		</div>
 	</section>
 	<section id="Ablations"/>
 		<h2>Ablations</h2>
@@ -502,30 +454,8 @@ figure {
 		  </div>
 		</div>
 		<div style="padding-bottom: 50px;" id="wrapper">
-		    <video id="home1" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/plato/chair.mp4" />
-		    </video>
-		    <video id="home2" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/ablations/spatial/plato/4x.mp4" />
-		    </video>
-		    <video id="home3" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/ablations/spatial/plato/8x.mp4" />
-		    </video>
-		    <video id="home4" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/ablations/spatial/plato/16x.mp4" />
-		    </video>
-
-		    <video id="home1" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/bf/chair.mp4" />
-		    </video>
-		    <video id="home2" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/ablations/spatial/bf/4x.mp4" />
-		    </video>
-		    <video id="home3" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/ablations/spatial/bf/8x.mp4" />
-		    </video>
-		    <video id="home4" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/ablations/spatial/bf/16x.mp4" />
+		    <video id="video" width="900" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/spatial/spatial.mp4" />
 		    </video>
 		    <p class="caption" style="margin-bottom: 1px;  text-align: center">
 			While PlatoNeRF (top) is able to interpolate across missing pixels due to the use of an implicit representation, Bounce Flash Lidar (bottom) performance significantly degrades as spatial resolution is reduced.
@@ -548,30 +478,8 @@ figure {
 		  </div>
 		</div>
 		<div style="padding-bottom: 50px;" id="wrapper">
-		    <video id="home1" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/plato/chair.mp4" />
-		    </video>
-		    <video id="home2" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/ablations/temporal/plato/2x.mp4" />
-		    </video>
-		    <video id="home3" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/ablations/temporal/plato/4x.mp4" />
-		    </video>
-		    <video id="home4" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/ablations/temporal/plato/8x.mp4" />
-		    </video>
-
-		    <video id="home1" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/bf/chair.mp4" />
-		    </video>
-		    <video id="home2" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/ablations/temporal/bf/2x.mp4" />
-		    </video>
-		    <video id="home3" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/ablations/temporal/bf/4x.mp4" />
-		    </video>
-		    <video id="home4" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/ablations/temporal/bf/8x.mp4" />
+		    <video id="video" width="900" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/spatial/spatial.mp4" />
 		    </video>
 		    <p class="caption" style="margin-bottom: 1px;  text-align: center">
 			As temporal resolution is reduced (i.e. bin size increased beyond 128 ps), PlatoNeRF (top) maintains smooth reconstructions, while geometry reconstructed by Bounce Flash Lidar (bottom) becomes bumpy (especially noticable on the the floor and walls). Note that the temporal resolution is indicated by the bin size (in picoseconds), with larger bin sizes indicating worse temporal resolution.
@@ -602,17 +510,8 @@ figure {
 		  </div>
 		</div>
 		<div style="padding-bottom: 50px;" id="wrapper">
-		    <video id="home1" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/ablations/ambient/plato.mp4" />
-		    </video>
-		    <video id="home2" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/ablations/ambient/s3.mp4" />
-		    </video>
-		    <video id="home3" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/ablations/albedo/plato.mp4" />
-		    </video>
-		    <video id="home4" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/ablations/albedo/s3.mp4" />
+		    <video id="video" width="900" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/ambient_albedo.mp4" />
 		    </video>
 		    <p class="caption" style="margin-bottom: 1px;  text-align: center">
 			PlatoNeRF is robust both to ambient light (left) and low albedo backgrounds (right), whereas RGB methods often fail, such as shown by S<sup>3</sup>-NeRF. S<sup>3</sup>-NeRF is unable to recover geometry with an area light added to the scene (left) and only recovers visible geometry when shadows become hard to detect due to low albedo background (right).
@@ -635,17 +534,8 @@ figure {
 		  </div>
 		</div>
 		<div style="padding-bottom: 50px;" id="wrapper">
-		    <video id="home1" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/plato/chair.mp4" />
-		    </video>
-		    <video id="home2" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/ablations/illumination/plato8.mp4" />
-		    </video>
-		    <video id="home3" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/ablations/illumination/plato4.mp4" />
-		    </video>
-		    <video id="home4" width="250" height="250" controls="controls" controls muted loop autoplay>
-			<source type="video/mp4" src="results/ablations/illumination/plato2.mp4" />
+		    <video id="video" width="900" controls="controls" controls muted loop autoplay>
+			<source type="video/mp4" src="results/ablations/illumination.mp4" />
 		    </video>
 		    <p class="caption" style="margin-bottom: 1px;  text-align: center">
 			Results as the number of illumination points used to train PlatoNeRF is reduced from sixteen illumination points (left) to two illumination points (right).
