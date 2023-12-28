@@ -369,9 +369,13 @@ figure {
                 <a href="assets/teaser.png">
                     <img width="100%" src="assets/teaser.png">
                 </a>
-                <p class="caption" style="margin-bottom: 1px;  text-align: justify">
+                <p class="caption" style="margin-bottom: 1px;">
 			We propose PlatoNeRF: a method to recover scene geometry from a single view using two-bounce signals captured by a single-photon lidar. (a) A laser illuminates a scene point, which diffusely reflects light in all directions. The reflected light illuminates the rest of the scene and casts shadows. Light that returns to the lidar sensor provides information about the visible scene, and cast shadows provide information about occluded portions of the scene. (b) The lidar sensor captures 3D time-of-flight images. (c) By aggregating several such images (by scanning the position of the laser), we are able to reconstruct the entire 3D scene geometry with volumetric rendering.
                 </p>
+            <p class="caption" style="margin-bottom: 1px;">
+            <br>
+            PlatoNeRF is named after the <a href="https://en.wikipedia.org/wiki/Allegory_of_the_cave">allegory of Plato's Cave</a>, in which reality is discerned from shadows cast on a cave wall.
+            </p>
             </figure>
     </section>
 
@@ -403,10 +407,19 @@ figure {
                 <a href="assets/dataset.png">
                     <img width="100%" src="assets/dataset.png">
                 </a>
-                <p class="caption" style="margin-bottom: 1px;  text-align: justify">
+                <p class="caption" style="margin-bottom: 1px;">
 			We create a dataset of scenes shown above. We train our model and our comparison methods on a single view. Objects are either partially self-occluded or fully occluded from the single training view. Our method and Bounce Flash Lidar are trained on single-view lidar data and S<sup>3</sup>-NeRF is trained on single-view RGB data.
                 </p>
             </figure>
+		<div id="wrapper">
+		    <video id="video" width="900" controls="controls" controls muted loop autoplay playsinline>
+			<source type="video/mp4" src="assets/tof_video.mp4" />
+		    </video>
+		    <p class="caption" style="margin-bottom: 1px;  text-align: center">
+            Visualization of single-photon lidar measurements captured in simulation (bunny in chair dataset). A measurement is captured for each of the 16 unique illumination spots. These videos show the light intensity measured by the lidar over time, and thus the propagation of light in the scene. The first pixel to measure intensity is the point in the scene that is illuminated. Subsequent intensity observed by other pixels corresponds to light that has scattered multiple times. The two-bounce light is used by PlatoNeRF.
+		    </p>
+		</div>
+        </section>
         </section>
 
 	<section id="results"/>
